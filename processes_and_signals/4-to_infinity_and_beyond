@@ -2,6 +2,6 @@
 #to infinity and beyond
 while ((1))
 do
-echo "To infinity and beyond"
-slepp 2
+    echo "To infinity and beyond"
+    slepp 2
 done
