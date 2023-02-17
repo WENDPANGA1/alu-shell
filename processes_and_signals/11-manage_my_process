@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-#Indefinitely writes I am alive! to the file /tmp/my_process and pause for 2 seconds in between
-while true
-do
-	echo "I am alive!" >> /tmp/my_process
-	sleep 2
-done
+# Manage my process
+
+start () {
+    ./manage_my_process &
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process started"
+}
+
+stop () {
+    pkill -f "./manage_my_process"
+    rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
+}
